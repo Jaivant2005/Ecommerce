@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .f{
+            width: 350px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        input{
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"]{
+            width: 45%;
+        }
+        fieldset{
+            background-color: darkkhaki;
+        }
+    </style>
+    <script >
+      function validateform(){
+        var username=document.forms["loginForm"]["username"].value;
+        var password=document.forms["loginForm"]["password"].value;
+         if (username == "") {
+              window.alert("username is required");
+                return false;
+            } 
+             if (password == "") {
+                window.alert("Password is required");
+                return false;
+            }
+            if(username =="jai" && password =="pass"){
+                 window.alert("Login Successful");
+                     return true;
+            }
+           else{
+            window.alert("Invalid username or password");
+            return false;
+           }
+        
+      }
+
+    </script>
+</head>
+<body>
+    <div class="f">
+    <form name="loginForm" action="./Home.html" onsubmit="return validateform()">
+        <fieldset>
+            <legend>Login</legend>
+    UserName: <input type="text" name="username" placeholder="UserName"><br><br>
+    Password: <input type="password" name="password" placeholder="Password"><br><br>
+    <input type="submit" value="Submit"> 
+    <input type="submit" value="Cancel">
+   
+    </fieldset>
+    </form>
+    </div>
+</body>
+</html>
